@@ -8,15 +8,14 @@
     * tenary operator
 * Context access
 * Property access
-* Custom functions: 
-    * lodash functions
-    * but prohibit function params, avoid prototype access
+* Functions: 
+    * support all lodash functions, but prohibit function params to avoid prototype access
 
 # Advantage
 * Security assurance
-    * sandbox isolation
-    * avoid memory leak by prohibit while etc.
-* [lodash](https://lodash.com/docs/4.17.15) functions support
+    * Sandbox isolation using AST
+    * Avoid memory leak by prohibit while etc.
+* [Lodash](https://lodash.com/docs/4.17.15) functions support
 
 # Usage
 ```
