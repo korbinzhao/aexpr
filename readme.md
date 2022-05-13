@@ -23,7 +23,7 @@
 const interpret = require('expression.js');
 
 // invoke the function
-// interpret(codeStr: string, context: object);
+// interpret(codeStr: string, context?: object);
 
 // calculate
 interpret('1 + 2 / 4 * 6');
