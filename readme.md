@@ -1,11 +1,13 @@
 # expression.js
 
+expression.js is safe javascript expression interpreter, support operators / context accessing / property accessing / lodash functions.
+
 # Support
 * Data type: number/boolean/string/object/array
 * Operators: 
     * Mathematical operators: + - * / 
-    * Logic operators: && || > >= < <=  === !== 
-    * tenary operator
+    * Logic operators: && || > >= < <= === !== 
+    * Tenary operator: a ? b : c
 * Context access
 * Property access
 * Functions: 
