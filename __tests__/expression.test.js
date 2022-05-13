@@ -92,5 +92,8 @@ describe('unit test', () => {
         // variable declarations and error throw
         expect(interpret.bind(null, `var a = 1`)).toThrow('Parse error on line 1');
         expect(interpret.bind(null, `a = 1`)).toThrow('Lexical error on line 1. Unrecognized text');
+
+        // avoid memory leak
+        expect(interpret.bind(null, `while(true){console.log('loop')}`)).toThrow('Parse error');
     });
 });
