@@ -1,24 +1,24 @@
 # expression.js
 
-# support
-* data type: number/boolean/string/object/array
-* operators: 
+# Support
+* Data type: number/boolean/string/object/array
+* Operators: 
     * Mathematical operators: + - * / 
     * Logic operators: && || > >= < <=  === !== 
     * tenary operator
-* context access
-* property access
-* custom functions: 
+* Context access
+* Property access
+* Custom functions: 
     * lodash functions
     * but prohibit function params, avoid prototype access
 
-# advantage
-* security assurance
+# Advantage
+* Security assurance
     * sandbox isolation
     * avoid memory leak by prohibit while etc.
 * [lodash](https://lodash.com/docs/4.17.15) functions support
 
-# usage
+# Usage
 ```
 const interpret = require('expression.js');
 
