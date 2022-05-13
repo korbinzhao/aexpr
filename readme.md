@@ -15,7 +15,7 @@ expression.js is safe javascript expression interpreter, support operators / con
 
 # Advantage
 * Security assurance
-    * Sandbox isolation using AST
+    * Sandbox isolation to avoid prototype accessing using AST
     * Avoid memory leak by prohibit statements like 'while'
 * [Lodash](https://lodash.com/docs/4.17.15) functions support
 
