@@ -16,7 +16,7 @@
 * security assurance
     * sandbox isolation
     * avoid memory leak by prohibit while etc.
-* lodash functions support
+* [lodash](https://lodash.com/docs/4.17.15) functions support
 
 # usage
 ```
