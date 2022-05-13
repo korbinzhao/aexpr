@@ -1,6 +1,6 @@
-# expression.js
+# Expression.js
 
-expression.js is safe javascript expression interpreter, support operators / context accessing / property accessing / lodash functions.
+Expression.js is safe javascript expression interpreter, support operators / context accessing / property accessing / lodash functions.
 
 # Support
 * Data type: number/boolean/string/object/array
