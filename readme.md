@@ -54,7 +54,7 @@ const arr = [
     { 'user': 'pebbles', 'active': true }
 ];
 
-// not support function type input params
+// not support function type input params to avoid prototype access
 expect(interpret.bind(null, `_.findIndex(users, function(o) { return o.user == 'barney'; })`)).toThrow('Parse error');
 // support ordinary input params
 expect(interpret(`_.findIndex(users, { 'user': 'fred', 'active': false })`, {users: arr})).toBe(1);
