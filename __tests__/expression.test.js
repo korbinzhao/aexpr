@@ -95,5 +95,10 @@ describe('unit test', () => {
 
         // avoid memory leak
         expect(interpret.bind(null, `while(true){console.log('loop')}`)).toThrow('Parse error');
+
+        // not support function type input params
+        expect(interpret.bind(null, `_.findIndex(users, function(o) { return o.user == 'barney'; })`)).toThrow('Parse error');
+        // support ordinary input params
+        expect(interpret(`_.findIndex(users, { 'user': 'fred', 'active': false })`, {users: arr})).toBe(1);
     });
 });

@@ -11,7 +11,7 @@ expression.js is safe javascript expression interpreter, support operators / con
 * Context access
 * Property access
 * Functions: 
-    * support all lodash functions, but prohibit function params to avoid prototype access
+    * Support all [Lodash](https://lodash.com/docs/4.17.15) functions, but prohibit function type input params to avoid prototype access
 
 # Advantage
 * Security assurance
@@ -47,6 +47,17 @@ interpret('a + b / c.d.e', { a: 2, b: 3, c: { d: { e: 5 } } });
 // lodash functions
 interpret(`_.has(obj, 'a.b')`, { obj: { a: { b: 1, c: 2 } } });
 interpret('_.indexOf(arr, 1)', { arr: [1, 2, 3, 4] });
+
+const arr = [
+    { 'user': 'barney', 'active': false },
+    { 'user': 'fred', 'active': false },
+    { 'user': 'pebbles', 'active': true }
+];
+
+// not support function type input params
+expect(interpret.bind(null, `_.findIndex(users, function(o) { return o.user == 'barney'; })`)).toThrow('Parse error');
+// support ordinary input params
+expect(interpret(`_.findIndex(users, { 'user': 'fred', 'active': false })`, {users: arr})).toBe(1);
 
 ```
 
