@@ -52,7 +52,7 @@ describe('unit test', () => {
         expect(interpret('1 > 2 ? "a" : "c"')).toBe(1 > 2 ? "a" : "c");
     });
 
-    it('context', () => {
+    it('context accessing and property accessing', () => {
         expect(interpret('a + b', { a: 2, b: 3 })).toBe(2 + 3);
         expect(interpret('a + b / c.d', { a: 2, b: 3, c: { d: 5 } })).toBe(2 + 3 / 5);
         expect(interpret('a + b / c.d.e', { a: 2, b: 3, c: { d: { e: 5 } } })).toBe(2 + 3 / 5);
@@ -64,7 +64,7 @@ describe('unit test', () => {
         { 'user': 'pebbles', 'active': true }
     ];
 
-    it('function', () => {
+    it('lodash functions', () => {
         expect(interpret('_.indexOf(arr, 1)', { arr: [1, 2, 3, 4] })).toBe(0);
         expect(interpret(`_.findIndex(arr, { 'user': 'fred' })`, {
             arr
@@ -93,7 +93,7 @@ describe('unit test', () => {
         expect(interpret.bind(null, `var a = 1`)).toThrow('Parse error on line 1');
         expect(interpret.bind(null, `a = 1`)).toThrow('Lexical error on line 1. Unrecognized text');
 
-        // avoid memory leak
+        // avoid memory leak by prohibit statements like 'while'
         expect(interpret.bind(null, `while(true){console.log('loop')}`)).toThrow('Parse error');
 
         // not support function type input params
