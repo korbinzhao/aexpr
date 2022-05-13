@@ -9,6 +9,10 @@
   },
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/korbinzhao/expression.js"
+  },
   "devDependencies": {
     "jest": "^28.1.0",
     "jison": "^0.4.18"
