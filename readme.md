@@ -1,6 +1,6 @@
-# Exp.js
+# Aexpr
 
-Exp.js is safe javascript expression interpreter, support operators / context accessing / property accessing / lodash functions.
+Aexpr is safe javascript expression interpreter, support operators / context accessing / property accessing / lodash functions.
 
 # Support
 * Data type: number/boolean/string/object/array
@@ -21,7 +21,7 @@ Exp.js is safe javascript expression interpreter, support operators / context ac
 
 # Usage
 ```
-const interpret = require('exp.js');
+const interpret = require('aexpr');
 
 // invoke the function
 // interpret(codeStr: string, context?: object);
