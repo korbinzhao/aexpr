@@ -17,6 +17,8 @@
     "expression",
     "interpret",
     "interpreter",
+    "expression-engine",
+    "expression-interpreter",
     "lodash",
     "compiler",
     "operators",
