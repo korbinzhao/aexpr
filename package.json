@@ -13,6 +13,16 @@
     "type": "git",
     "url": "https://github.com/korbinzhao/aexpr"
   },
+  "keywords": [
+    "expression",
+    "interpret",
+    "interpreter",
+    "lodash",
+    "compiler",
+    "operators",
+    "context",
+    "property"
+  ],
   "devDependencies": {
     "jest": "^28.1.0",
     "jison": "^0.4.18"
