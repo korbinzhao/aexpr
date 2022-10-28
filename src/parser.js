@@ -99,7 +99,7 @@ case 5:
  this.$ = yytext.substring(1, yytext.length - 1) 
 break;
 case 6:
- this.$ = JSON.parse(yytext.replaceAll('\'', '"')) 
+ this.$ = JSON.parse(yytext.replace(/\'/g, '"')) 
 break;
 case 7:
  this.$ = { __isAstNode: true, type: 'operator', opt: '-', left: 0, right: $$[$0] } 
@@ -731,15 +731,15 @@ if (typeof require !== 'undefined' && typeof exports !== 'undefined') {
 exports.parser = parser;
 exports.Parser = parser.Parser;
 exports.parse = function () { return parser.parse.apply(parser, arguments); };
-exports.main = function commonjsMain (args) {
-    if (!args[1]) {
-        console.log('Usage: '+args[0]+' FILE');
-        process.exit(1);
-    }
-    var source = require('fs').readFileSync(require('path').normalize(args[1]), "utf8");
-    return exports.parser.parse(source);
-};
-if (typeof module !== 'undefined' && require.main === module) {
-  exports.main(process.argv.slice(1));
-}
+// exports.main = function commonjsMain (args) {
+//     if (!args[1]) {
+//         console.log('Usage: '+args[0]+' FILE');
+//         process.exit(1);
+//     }
+//     var source = require('fs').readFileSync(require('path').normalize(args[1]), "utf8");
+//     return exports.parser.parse(source);
+// };
+// if (typeof module !== 'undefined' && require.main === module) {
+//   exports.main(process.argv.slice(1));
+// }
 }

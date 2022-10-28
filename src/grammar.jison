@@ -62,7 +62,7 @@ _\.[a-zA-Z0-9]+   { return 'FUNCTION'; } /** only can invoke lodash function **/
       | STRING
         { $$ = yytext.substring(1, yytext.length - 1) }
       | OBJECT
-        { $$ = JSON.parse(yytext.replaceAll('\'', '"')) }
+        { $$ = JSON.parse(yytext.replace(/\'/g, '"')) } }
       | '-' e
         { $$ = { __isAstNode: true, type: 'operator', opt: '-', left: 0, right: $2 } }
       | e '-' e
